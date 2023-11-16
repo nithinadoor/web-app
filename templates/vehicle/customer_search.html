@@ -1,0 +1,107 @@
+{% extends 'vehicle/customerbase.html' %}
+{% load static %}
+{% block content %}
+
+	<!-- main content -->
+	<div class="wrapper">
+
+<!-- ****** table  start ********** -->
+		<div class="row">
+			<div class="col-12 col-m-12 col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h3 style="color:red; text-align:center" >Mechanic Search Here
+						</h3>
+
+					</div>
+                    <br>
+                    <br>
+                    <form class="navbar-search">
+                        <input type="text" name="Search" class="navbar-search-input" placeholder="search here">
+                        <i class="fas fa-search"></i>
+                    </form>
+                    <br>
+                    <br>
+                    </div>
+                </div>
+        </div>        
+    </div>
+    	<!-- main content -->
+	<div class="wrapper">
+
+        <!-- ****** table  start ********** -->
+                <div class="row">
+                    <div class="col-12 col-m-12 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 style="color:red; text-align:center" >Report
+                                </h3>
+        
+                            </div>
+                            <div class="card-content">
+                                <table>
+                                    <thead>
+                        <tr>
+                          
+                          <th>Name</th>
+                          <th>Location</th>
+                          <th>Phone No</th>
+                          <th>Charge/Hr</th>
+
+                          
+                        </tr>
+                                    </thead>
+                                    <tbody>
+                      {% for w in attendaces %}
+                        <tr>
+                          <td> {{w.date}}</td>
+                          <td> {{w.present_status}}</td>
+                                          </tr>
+                        {% endfor %}
+        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <!-- ****** table start ********** -->
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>                <!-- end fo
+					<div class="card-content">
+						<table>
+							<thead>
+                <tr>
+                  <th>Vehicle Name</th>
+                  <th>Category</th>
+                  <th>Vehicle Number</th>
+                  <th>Problem Description</th>
+                  <th>Enquiry Date</th>
+                  <th>Status</th>
+								  <th>Delete Enquiry</th>
+                </tr>
+							</thead>
+							<tbody>
+                {% for enq in enquiries %}
+                <tr>
+                  <td>{{enq.vehicle_name}}</td>
+                  <td>{{enq.category}}</td>
+                  <td>{{enq.vehicle_no}}</td>
+                  <td>{{enq.problem_description}}</td>
+                  <td>{{enq.date}}</td>
+                  <td>{{enq.status}}</td>
+                  <td><a style="color:blue; text-decoration:none;font-size:25px;"href="{% url 'customer-delete-request' enq.id  %}">&#10008;</a></td>
+                </tr>
+                {% endfor %}
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- ****** table start ********** -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	</div>
+	<!-- end main content -->
+{% endblock content %}
