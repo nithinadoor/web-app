@@ -1,0 +1,52 @@
+{% extends 'vehicle/customerbase.html' %}
+{% load static %}
+{% block content %}    
+    <div class="wrapper">
+
+        <!-- ****** table  start ********** -->
+                <div class="row">
+                    <div class="col-12 col-m-12 col-sm-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 style="color:red; text-align:center" >List of Mechanics
+                                </h3>
+        
+                            </div>
+                            <div class="card-content">
+                                <table>
+                                    <thead>
+                        <tr>
+                          
+                          <th>Name</th>
+                          <th>Location</th>
+                          <th>Phone No</th>
+                          <th>Charge/Hr</th>
+
+                          
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                                    </thead>
+                                    <tbody>
+                      {% for w in attendaces %}
+                        <tr>
+                          <td> {{w.date}}</td>
+                          <td> {{w.present_status}}</td>
+                                          </tr>
+                        {% endfor %}
+        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+
+
+{% endblock content %}

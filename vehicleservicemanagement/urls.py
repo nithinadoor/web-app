@@ -75,7 +75,7 @@ urlpatterns = [
     path('mechanic-attendance', views.mechanic_attendance_view,name='mechanic-attendance'),
 
 
-
+    # path('mech_list',views.mech_list,name='mech_list'),
     path('customer-dashboard', views.customer_dashboard_view,name='customer-dashboard'),
     path('customer-request', views.customer_request_view,name='customer-request'),
     path('customer-add-request',views.customer_add_request_view,name='customer-add-request'),

@@ -198,6 +198,7 @@ def admin_view_customer_invoice_view(request):
 
 @login_required(login_url='adminlogin')
 def customer_search(request):
+    
     return render(request,'vehicle/customer_search.html')
 
 
@@ -579,6 +580,10 @@ def customer_profile_view(request):
     return render(request,'vehicle/customer_profile.html',{'customer':customer})
 
 
+
+
+
+
 @login_required(login_url='customerlogin')
 @user_passes_test(is_customer)
 def edit_customer_profile_view(request):
@@ -731,7 +736,10 @@ def edit_mechanic_profile_view(request):
             return redirect('mechanic-profile')
     return render(request,'vehicle/edit_mechanic_profile.html',context=mydict)
 
-
+# @login_required(login_url='mechaniclogin')
+# @user_passes_test(is_mechanic)
+# def mech_list(request):
+#     return render(request,'vehicle/mech_list.html')
 
 
 
