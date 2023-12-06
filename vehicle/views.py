@@ -197,8 +197,8 @@ def admin_view_customer_invoice_view(request):
 
 
 @login_required(login_url='adminlogin')
-def customer_search(request):
-    
+def customer_search(request,pk):
+    mechanic=models.Mechanic.objects.get(id=pk)
     return render(request,'vehicle/customer_search.html')
 
 

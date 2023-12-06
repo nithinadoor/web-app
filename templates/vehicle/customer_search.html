@@ -18,7 +18,7 @@
                     <br>
                     <form class="navbar-search" method="POST">
                         {% csrf_token %}
-                        <select name="Search" class="navbar-search-input">
+                        <select name="mechanic" class="form-control" id="mechanic">
                             <!-- Populate the select options with all mechanic names -->
                             {% for m in mechanics %}
                                 <option value="{{ m.get_name }}">{{ m.get_name }}</option>
